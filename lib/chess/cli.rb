@@ -9,7 +9,7 @@ class Chess
     def call
      #player turn sequence:
       @stdout.puts current_player_turn
-      prompt_player_for_origin
+      @stdout.puts prompt_player_for_origin
       possible_moves_from_location
       prompt_player_for_destination
       piece_in_destination_location
@@ -20,5 +20,8 @@ class Chess
       "#{@game.current_player}'s turn."
     end
 
+    def prompt_player_for_origin
+      "#{@game.current_player}, your move?"
+    end
   end
 end
