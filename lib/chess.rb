@@ -2,19 +2,21 @@ class Chess
   class Game
 
     attr_reader :board, :status
+    attr_accessor :players, :current_player
 
     def initialize
-      @current_player = current_player
+      @players = ["white","black"]
+      @current_player = players.first 
       @board = board
       @status = predefined
     end
 
-    def current_player
-      ["white","black"].first
-    end
-
     def predefined
       [false,false,false,false,true]
+    end
+
+    def rotate_players
+      @current_player = players.rotate!.first
     end
 
     def over?
