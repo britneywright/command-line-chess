@@ -6,16 +6,19 @@ class Chess
     def initialize(stdin,stdout)
       @stdin, @stdout = stdin, stdout
       @game = Chess::Game.new
+      @predetermined = possible_moves 
     end
 
     def call
-     #player turn sequence:
-      @stdout.puts game
-      @stdout.puts current_player_turn
-      @stdout.puts prompt_player_for_origin
-      @stdout.puts possible_moves_from_location
-      @stdout.puts prompt_player_for_destination
-      @stdout.puts piece_in_destination_location
+      until game.over?
+        #player turn sequence:
+        @stdout.puts game
+        @stdout.puts current_player_turn
+        @stdout.puts prompt_player_for_origin
+        @stdout.puts possible_moves_from_location
+        @stdout.puts prompt_player_for_destination
+        @stdout.puts piece_in_destination_location
+      end
       0
     end
     
@@ -29,17 +32,16 @@ class Chess
 
     def possible_moves_from_location
       @origin = gets.chomp
-      "moves for #{game.current_player} pawn #{@origin}: #{possible_moves.shift.join(', ')}"
+      "moves for #{game.current_player} pawn #{@origin}: #{@predetermined.shift.join(', ')}"
     end
 
     def possible_moves
-      predetermined = [
+      [
         ["f3","f4"],
         ["e5","e6"],
         ["g3","g4"],
         ["e7","f6","g5","h4"]
       ]
-      predetermined
     end
     
     def prompt_player_for_destination
