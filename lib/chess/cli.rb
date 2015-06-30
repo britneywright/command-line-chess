@@ -17,7 +17,8 @@ class Chess
     end
     
     def current_player_turn
-      "{game.current_player}}'s turn"
+      "#{@game.current_player}'s turn."
     end
+
   end
 end
