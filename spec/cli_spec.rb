@@ -4,9 +4,9 @@ require 'stringio'
 RSpec.describe 'Chess::CLI' do
   it "plays a fast game of chess" do
     stdout = StringIO.new
-    stdin = StringIO.new("f2\nf3\ne7\ne5\ng2\ng4\nd8\nh4\THIS IS NOT READ!")
-    existstatus = Chess::CLI.new(stdin,stdout).call
-    expect(existstatus).to eq 0
+    stdin = StringIO.new("f2\nf3\ne7\ne5\ng2\ng4\nd8\nh4\nTHIS IS NOT READ!")
+    exitstatus = Chess::CLI.new(stdin,stdout).call
+    expect(exitstatus).to eq 0
     expect(stdin.read).to eq 'THIS IS NOT READ!'
     expect(stdout.string).to eq \
     "8  ♜  ♞  ♝  ♛  ♚  ♝  ♞  ♜\n" +
