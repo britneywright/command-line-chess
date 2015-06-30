@@ -10,6 +10,7 @@ class Chess
 
     def call
      #player turn sequence:
+      @stdout.puts game
       @stdout.puts current_player_turn
       @stdout.puts prompt_player_for_origin
       @stdout.puts possible_moves_from_location
