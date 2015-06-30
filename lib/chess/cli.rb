@@ -14,7 +14,7 @@ class Chess
       @stdout.puts prompt_player_for_origin
       @stdout.puts possible_moves_from_location
       @stdout.puts prompt_player_for_destination
-      piece_in_destination_location
+      @stdout.puts piece_in_destination_location
       0
     end
     
@@ -39,6 +39,15 @@ class Chess
         ["e7","f6","g5","h4"]
       ]
       predetermined
+    end
+    
+    def prompt_player_for_destination
+      "#{game.current_player}, move #{@origin} where?"
+    end
+
+    def piece_in_destination_location
+      destination = gets.chomp
+      "Ok, #{game.current_player}'s pawn #{@origin} to #{destination}."
     end
   end
 end
