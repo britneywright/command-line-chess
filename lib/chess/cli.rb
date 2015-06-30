@@ -1,3 +1,4 @@
+require 'pry'
 require 'chess'
 class Chess
   class CLI
@@ -18,6 +19,7 @@ class Chess
         @stdout.puts possible_moves_from_location
         @stdout.puts prompt_player_for_destination
         @stdout.puts piece_in_destination_location
+        game.rotate_players
       end
       0
     end
