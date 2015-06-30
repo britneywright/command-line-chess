@@ -1,15 +1,24 @@
 class Chess
   class Game
 
-    attr_reader :board
+    attr_reader :board, :status
 
     def initialize
       @current_player = current_player
       @board = board
+      @status = predefined
     end
 
     def current_player
       ["white","black"].first
+    end
+
+    def predefined
+      [false,false,false,false,true]
+    end
+
+    def over?
+      status.shift
     end
 
     def board
