@@ -33,7 +33,7 @@ class Chess
     end
 
     def possible_moves_from_location
-      @origin = gets.chomp
+      @origin = @stdin.gets.chomp
       "moves for #{game.current_player} pawn #{@origin}: #{@predetermined.shift.join(', ')}"
     end
 
@@ -51,7 +51,7 @@ class Chess
     end
 
     def piece_in_destination_location
-      destination = gets.chomp
+      destination = @stdin.gets.chomp
       "Ok, #{game.current_player}'s pawn #{@origin} to #{destination}."
     end
   end
