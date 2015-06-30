@@ -13,7 +13,7 @@ class Chess
       @stdout.puts current_player_turn
       @stdout.puts prompt_player_for_origin
       @stdout.puts possible_moves_from_location
-      prompt_player_for_destination
+      @stdout.puts prompt_player_for_destination
       piece_in_destination_location
       0
     end
@@ -27,7 +27,8 @@ class Chess
     end
 
     def possible_moves_from_location
-      "moves for #{game.current_player} pawn: #{possible_moves.shift.join(', ')}"
+      @origin = gets.chomp
+      "moves for #{game.current_player} pawn #{@origin}: #{possible_moves.shift.join(', ')}"
     end
 
     def possible_moves
