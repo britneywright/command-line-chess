@@ -1,5 +1,7 @@
 require_relative 'chess/chessman'
 require_relative 'chess/pawn'
+require_relative 'chess/rook'
+
 class Chess
   class Game
 
@@ -32,26 +34,26 @@ class Chess
         end
       end
       board[0] = [
-        Chess::Chessman.new("black","rook"),
+        Chess::Rook.new("black"),
         Chess::Chessman.new("black","knight"),
         Chess::Chessman.new("black","bishop"),
         Chess::Chessman.new("black","queen"),
         Chess::Chessman.new("black","king"),
         Chess::Chessman.new("black","bishop"),
         Chess::Chessman.new("black","knight"),
-        Chess::Chessman.new("black","rook"),
+        Chess::Rook.new("black")
       ]
       board[1] = 8.times.map {Chess::Pawn.new("black")}
       board[-2] = 8.times.map {Chess::Pawn.new("white")}
       board[-1] = [
-        Chess::Chessman.new("white","rook"),
+        Chess::Rook.new("white"),
         Chess::Chessman.new("white","knight"),
         Chess::Chessman.new("white","bishop"),
         Chess::Chessman.new("white","queen"),
         Chess::Chessman.new("white","king"),
         Chess::Chessman.new("white","bishop"),
         Chess::Chessman.new("white","knight"),
-        Chess::Chessman.new("white","rook")
+        Chess::Rook.new("white")
       ]
       board
     end
