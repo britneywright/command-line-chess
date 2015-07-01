@@ -22,6 +22,7 @@ class Chess
         @stdout.puts piece_in_destination_location
         game.move(@origin,@destination)
         game.rotate_players
+        @stdout.puts "\n"
       end
       @stdout.puts game
       0
