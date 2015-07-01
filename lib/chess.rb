@@ -1,4 +1,5 @@
 require_relative 'chess/chessman'
+require_relative 'chess/pawn'
 class Chess
   class Game
 
@@ -40,8 +41,8 @@ class Chess
         Chess::Chessman.new("black","knight"),
         Chess::Chessman.new("black","rook"),
       ]
-      board[1] = 8.times.map {Chess::Chessman.new("black","pawn")}
-      board[-2] = 8.times.map {Chess::Chessman.new("white","pawn")}
+      board[1] = 8.times.map {Chess::Pawn.new("black")}
+      board[-2] = 8.times.map {Chess::Pawn.new("white")}
       board[-1] = [
         Chess::Chessman.new("white","rook"),
         Chess::Chessman.new("white","knight"),
@@ -54,10 +55,22 @@ class Chess
       ]
       board
     end
-    
+
+    def possible_moves(origin)
+      y = convert_y(origin)
+      x = convert_x(origin)
+      locations = board[y][x].moves(y,x)
+      locations.map {|coor| chess_square(coor)}
+    end
+
+    def chess_square(coord)
+      (coord[1] + 'A'.ord).chr.downcase + (coord[0] - 8).abs.to_s
+    end
+
     def move(origin,destination)
       board[convert_y(destination)][convert_x(destination)] = board[convert_y(origin)][convert_x(origin)]
       board[convert_y(origin)][convert_x(origin)] = " "
+      board[convert_y(destination)][convert_x(destination)].moved + 1
       board
     end
 
