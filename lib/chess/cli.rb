@@ -6,7 +6,7 @@ class Chess
     def initialize(stdin,stdout)
       @stdin, @stdout = stdin, stdout
       @game = Chess::Game.new
-      @predetermined = possible_moves 
+      @predetermined = possible_moves #REMOVE THIS 
     end
 
     def call
@@ -25,7 +25,8 @@ class Chess
         @stdout.puts "\n"
       end
       game.rotate_players
-      @stdout.puts "Checkmate. #{game.current_player.capitalize} wins."
+      @stdout.puts "Checkmate. #{game.current_player.capitalize} wins." #NEED TO FIX THIS
+
       @stdout.puts game
       0
     end
@@ -47,9 +48,11 @@ class Chess
     end
 
     def possible_moves_from_location
+      # CHANGE @predetermined
       "moves for #{game.current_player} #{game.piece(@origin)} #{@origin}: #{@predetermined.shift.join(', ')}"
     end
 
+    #NEED TO REMOVE THIS
     def possible_moves
       [
         ["f3","f4"],
