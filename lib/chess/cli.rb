@@ -14,10 +14,10 @@ class Chess
         #player turn sequence:
         @stdout.puts game
         @stdout.puts current_player_turn
-        @stdout.print prompt_player_for_origin
+        @stdout.puts prompt_player_for_origin
         chessman_origin
         @stdout.puts possible_moves_from_location
-        @stdout.print prompt_player_for_destination
+        @stdout.puts prompt_player_for_destination
         chessman_destination
         @stdout.puts piece_in_destination_location
         game.move(@origin,@destination)
@@ -45,7 +45,7 @@ class Chess
     end
 
     def possible_moves_from_location
-      "moves for #{game.current_player} pawn #{@origin}: #{@predetermined.shift.join(', ')}"
+      "moves for #{game.current_player} #{game.piece(@origin)} #{@origin}: #{@predetermined.shift.join(', ')}"
     end
 
     def possible_moves
@@ -62,7 +62,7 @@ class Chess
     end
 
     def piece_in_destination_location
-      "Ok, #{game.current_player}'s pawn #{@origin} to #{@destination}."
+      "Ok, #{game.current_player}'s #{game.piece(@origin)} #{@origin} to #{@destination}."
     end
   end
 end
