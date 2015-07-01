@@ -6,7 +6,6 @@ class Chess
     def initialize(stdin,stdout)
       @stdin, @stdout = stdin, stdout
       @game = Chess::Game.new
-      @predetermined = possible_moves #REMOVE THIS 
     end
 
     def call
@@ -48,20 +47,9 @@ class Chess
     end
 
     def possible_moves_from_location
-      # CHANGE @predetermined
-      "moves for #{game.current_player} #{game.piece(@origin)} #{@origin}: #{@predetermined.shift.join(', ')}"
+      "moves for #{game.current_player} #{game.piece(@origin)} #{@origin}: #{game.possible_moves(@origin).join(', ')}"
     end
 
-    #NEED TO REMOVE THIS
-    def possible_moves
-      [
-        ["f3","f4"],
-        ["e5","e6"],
-        ["g3","g4"],
-        ["e7","f6","g5","h4"]
-      ]
-    end
-    
     def prompt_player_for_destination
       "#{game.current_player}, move #{@origin} where? "
     end
