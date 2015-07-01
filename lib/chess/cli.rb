@@ -24,6 +24,8 @@ class Chess
         game.rotate_players
         @stdout.puts "\n"
       end
+      game.rotate_players
+      @stdout.puts "Checkmate. #{game.current_player.capitalize} wins."
       @stdout.puts game
       0
     end

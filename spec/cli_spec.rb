@@ -68,8 +68,8 @@ RSpec.describe 'Chess::CLI' do
     "moves for black queen d8: e7, f6, g5, h4\n" +
     "black, move d8 where? \n" +
     "Ok, black's queen d8 to h4.\n" +
-    "Checkmate. Black wins.\n"
     "\n" +
+    "Checkmate. Black wins.\n"+
     "8  ♜  ♞  ♝     ♚  ♝  ♞  ♜\n" +
     "7  ♟  ♟  ♟  ♟     ♟  ♟  ♟\n" +
     "6                        \n" +
