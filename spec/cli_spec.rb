@@ -22,7 +22,6 @@ RSpec.describe 'Chess::CLI' do
     "white, your move? \n" +
     "moves for white pawn f2: f3, f4\n" +
     "white, move f2 where? \n" +
-    "\n" +
     "Ok, white's pawn f2 to f3.\n" +
     "\n" +
     "8  ♜  ♞  ♝  ♛  ♚  ♝  ♞  ♜\n" +
@@ -38,7 +37,6 @@ RSpec.describe 'Chess::CLI' do
     "black, your move? \n" +
     "moves for black pawn e7: e5, e6\n" +
     "black, move e7 where? \n" +
-    "\n" +
     "Ok, black's pawn e7 to e5.\n" +
     "\n" +
     "8  ♜  ♞  ♝  ♛  ♚  ♝  ♞  ♜\n" +
@@ -54,7 +52,6 @@ RSpec.describe 'Chess::CLI' do
     "white, your move? \n" +
     "moves for white pawn g2: g3, g4\n" +
     "white, move g2 where? \n" +
-    "\n" +
     "Ok, white's pawn g2 to g4.\n" +
     "\n" +
     "8  ♜  ♞  ♝  ♛  ♚  ♝  ♞  ♜\n" +
@@ -70,7 +67,6 @@ RSpec.describe 'Chess::CLI' do
     "black, your move? \n" +
     "moves for black queen d8: e7, f6, g5, h4\n" +
     "black, move d8 where? \n" +
-    "\n" +
     "Ok, black's queen d8 to h4.\n" +
     "Checkmate. Black wins.\n"
     "\n" +
