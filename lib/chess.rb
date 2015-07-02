@@ -1,6 +1,7 @@
 require_relative 'chess/chessman'
 require_relative 'chess/pawn'
 require_relative 'chess/rook'
+require_relative 'chess/bishop'
 
 class Chess
   class Game
@@ -36,10 +37,10 @@ class Chess
       board[0] = [
         Chess::Rook.new("black"),
         Chess::Chessman.new("black","knight"),
-        Chess::Chessman.new("black","bishop"),
+        Chess::Bishop.new("black","bishop"),
         Chess::Chessman.new("black","queen"),
         Chess::Chessman.new("black","king"),
-        Chess::Chessman.new("black","bishop"),
+        Chess::Bishop.new("black","bishop"),
         Chess::Chessman.new("black","knight"),
         Chess::Rook.new("black")
       ]
@@ -48,10 +49,10 @@ class Chess
       board[-1] = [
         Chess::Rook.new("white"),
         Chess::Chessman.new("white","knight"),
-        Chess::Chessman.new("white","bishop"),
+        Chess::Bishop.new("white","bishop"),
         Chess::Chessman.new("white","queen"),
         Chess::Chessman.new("white","king"),
-        Chess::Chessman.new("white","bishop"),
+        Chess::Bishop.new("white","bishop"),
         Chess::Chessman.new("white","knight"),
         Chess::Rook.new("white")
       ]
