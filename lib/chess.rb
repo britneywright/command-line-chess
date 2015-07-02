@@ -65,7 +65,7 @@ class Chess
     def possible_moves(origin)
       y = convert_y(origin)
       x = convert_x(origin)
-      locations = board[y][x].moves(y,x)
+      locations = board[y][x].moves(y,x,board)
       locations.map {|coor| chess_square(coor)}
     end
 
