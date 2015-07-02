@@ -22,7 +22,7 @@ class Chess
          "white bishop" => "♗",
          "white queen" => "♕",
          "white king" => "♔",
-         "empty space" => " "
+         " " => " "
        }
     end
 

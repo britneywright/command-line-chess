@@ -34,7 +34,7 @@ class Chess
     def make_board
       board = (0...8).map do |row|
         (0...8).map do |column|
-          Chess::Chessman.new("empty","space")
+          Chess::Chessman.new(nil,nil)
         end
       end
       board[0] = [
