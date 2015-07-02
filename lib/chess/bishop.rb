@@ -9,8 +9,8 @@ class Chess
       super
     end
     
-    def moves(y,x)
-      diagonal_moves(y,x)
+    def moves(y,x,board)
+      diagonal_moves(y,x,board)
     end
   end
 end
