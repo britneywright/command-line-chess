@@ -9,7 +9,7 @@ class Chess
       if color == "white"
         [[y-1,x],[y-2,x]]
       elsif color == "black"
-        [[y+1,x],[y+2,x]]
+        [[y+2,x],[y+1,x]]
       end
     end
 
