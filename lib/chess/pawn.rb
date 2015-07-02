@@ -13,7 +13,7 @@ class Chess
       end
     end
 
-    def moves(y,x)
+    def moves(y,x,board)
       if @moved == 0
         initial_moves(y,x)
       else
