@@ -2,7 +2,7 @@ require_relative 'chess/chessman'
 require_relative 'chess/pawn'
 require_relative 'chess/rook'
 require_relative 'chess/bishop'
-
+require_relative 'chess/queen'
 class Chess
   class Game
 
@@ -38,7 +38,7 @@ class Chess
         Chess::Rook.new("black"),
         Chess::Chessman.new("black","knight"),
         Chess::Bishop.new("black","bishop"),
-        Chess::Chessman.new("black","queen"),
+        Chess::Queen.new("black"),
         Chess::Chessman.new("black","king"),
         Chess::Bishop.new("black","bishop"),
         Chess::Chessman.new("black","knight"),
@@ -50,7 +50,7 @@ class Chess
         Chess::Rook.new("white"),
         Chess::Chessman.new("white","knight"),
         Chess::Bishop.new("white","bishop"),
-        Chess::Chessman.new("white","queen"),
+        Chess::Queen.new("white"),
         Chess::Chessman.new("white","king"),
         Chess::Bishop.new("white","bishop"),
         Chess::Chessman.new("white","knight"),
