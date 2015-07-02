@@ -11,6 +11,7 @@ module DiagonalMovable
         break
       else
         possibilities << [y+counter,x+counter]
+        break if board[y+counter][x+counter].color != nil 
         counter += 1
       end
     end
@@ -21,10 +22,11 @@ module DiagonalMovable
     possibilities = []
     counter = 1 
     until (y + counter >= 8 || x - counter < 0)
-      if board[y+counter][x+counter].color == color 
+      if board[y+counter][x-counter].color == color 
         break
       else
         possibilities << [y+counter,x-counter]
+        break if board[y+counter][x-counter].color != nil 
         counter += 1
       end
     end
@@ -35,10 +37,11 @@ module DiagonalMovable
     possibilities = []
     counter = 1 
     until (x + counter >= 8 || y - counter < 0)
-      if board[y+counter][x+counter].color == color 
+      if board[y-counter][x+counter].color == color 
         break
       else
         possibilities << [y-counter,x+counter]
+        break if board[y-counter][x+counter].color != nil 
         counter += 1
       end
     end
@@ -49,10 +52,11 @@ module DiagonalMovable
     possibilities = []
     counter = 1 
     until (y - counter < 0 || x - counter < 0)
-      if board[y+counter][x+counter].color == color 
+      if board[y-counter][x-counter].color == color 
         break
       else
         possibilities << [y-counter,x-counter]
+        break if board[y-counter][x-counter].color != nil 
         counter += 1
       end
     end
