@@ -75,7 +75,7 @@ class Chess
 
     def move(origin,destination)
       board[convert_y(destination)][convert_x(destination)] = board[convert_y(origin)][convert_x(origin)]
-      board[convert_y(origin)][convert_x(origin)] = " "
+      board[convert_y(origin)][convert_x(origin)] = Chess::Chessman.new(nil,nil)
       board[convert_y(destination)][convert_x(destination)].moved + 1
       board
     end
