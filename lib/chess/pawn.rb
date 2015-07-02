@@ -1,8 +1,6 @@
 require_relative '../chess'
 class Chess
   class Pawn < Chessman
-    attr_reader :color
-
     def initialize(color,type="pawn")
       super
     end
