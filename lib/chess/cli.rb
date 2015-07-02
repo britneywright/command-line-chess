@@ -44,10 +44,6 @@ class Chess
 
     def chessman_destination
       @destination = @stdin.gets.chomp
-      if !possible_moves_from_location.include?(@destination)
-        puts "That's nota legal move, try again."
-        @destination = @stdin.gets.chomp
-      end
     end
 
     def possible_moves_from_location
