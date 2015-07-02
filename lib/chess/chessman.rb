@@ -1,6 +1,6 @@
 class Chess
   class Chessman
-    attr_reader :type, :avatar, :moved
+    attr_reader :color, :type, :avatar, :moved
     def initialize(color,type)
       @color = color
       @type = type
