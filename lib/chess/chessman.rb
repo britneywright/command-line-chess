@@ -26,8 +26,8 @@ class Chess
        }
     end
 
-    def moves
-      "No moves available"
+    def moves(y,x,board)
+      []
     end
 
     def to_s
