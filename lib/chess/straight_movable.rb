@@ -3,8 +3,9 @@ module StraightMovable
     possibilities = []
     directions.each do |go|
       location = [y,x]
-      until location.any? {|a| a >= 7 || a < 1}
+      until location.any? {|a| a > 7 || a < 0}
         location = [location,go].transpose.map {|x| x.reduce(:+)}
+        break if location.any? {|a| a > 7 || a < 0}
         break if board[location[0]][location[1]].color == color 
         possibilities.push location
         break if !board[location[0]][location[1]].color.nil? 
