@@ -33,26 +33,5 @@ class Chess
     def to_s
       avatar
     end
-
-#    def horizontal
-#     board[convert_x(origin)]
-#      [0,1],[0,-1]
-#    end
-#
-#    def vertical
-#      [1,0],[-1,0]
-#    end
-#
-#    def diagonal
-#      [1,1],[-1,-1],[1,-1],[-1,1]
-#    end
-#
-#    def knight
-#      [1,2],[1,-2],[2,1],[2,-1],[-1,-2],[-1,2],[-2,-1],[-2,1]
-#    end
-#
-#    def pawn
-#      [1,0],[2,0],[1,1],[1,-1]
-#    end
   end
 end
